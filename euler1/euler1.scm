@@ -14,3 +14,10 @@
     sum
   )
 )
+
+(define (add-multiples-of-three-or-five-less-than-num num i sum)
+  (if (< i num) (set! sum (add-if-divisible-by-three-or-five i sum)) sum)
+  (if (< i num) (add-multiples-of-three-or-five-less-than-num num (+ i 1) sum) sum)
+)
+
+(define euler1 (add-multiples-of-three-or-five-less-than-num 1000 0 0))
