@@ -6,3 +6,11 @@
       (= (modulo num 5) 0)
   )
 )
+
+(define (add-if-divisible-by-three-or-five num sum)
+  (if 
+    (divisible-by-three-or-five num)
+    (+ num sum)
+    sum
+  )
+)
