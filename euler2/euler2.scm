@@ -16,3 +16,18 @@
 (define (is-even a)
   (= (modulo a 2) 0)
 )
+
+(define (add-if-even a sum)
+  (if (is-even a) (+ a sum) sum)
+)
+
+(define (add-and-increment a sum i)
+  (define this-fib (fib i))
+  (set! sum (add-if-even this-fib sum))
+  (cond
+    ((< this-fib a) (add-and-increment a sum (+ i 1)))
+    (else sum)
+  )
+)
+
+(define euler2 (add-and-increment 4000000 0 1))
